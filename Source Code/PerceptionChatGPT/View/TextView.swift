@@ -16,7 +16,7 @@ struct TextView: UIViewRepresentable{
     @Binding var height: CGFloat
     @Binding var isReturn: Bool
     var placeHolder:String
-    var textCustomColor = UIColor.black
+    var textCustomColor = UIColor(Color("green"))
     var placeholderCustomColor = UIColor.gray
    //
     
