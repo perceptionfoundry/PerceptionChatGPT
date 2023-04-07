@@ -134,6 +134,7 @@ struct GPTChatView: View {
     }
     
     func sendMessage(){
+        UIApplication.shared.endEditing()
         isWait.toggle()
         let myMsg = ChatMessage(id: UUID().uuidString, content: tfValue, dateCreated: Date(), sender: .me)
         
@@ -156,5 +157,15 @@ struct GPTChatView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         GPTChatView()
+    }
+}
+
+
+extension UIApplication {
+    func endEditing() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+    func beginEditing(){
+        sendAction(#selector(UIResponder.becomeFirstResponder), to: nil, from: nil, for: nil)
     }
 }
