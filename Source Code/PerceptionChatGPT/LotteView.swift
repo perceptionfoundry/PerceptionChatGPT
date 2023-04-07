@@ -9,10 +9,12 @@ import SwiftUI
 import Lottie
 
 struct LotteView: UIViewRepresentable {
+    
+    var title : String
    
     func makeUIView(context: Context) -> some LottieAnimationView {
         
-        let animationView = LottieAnimationView(name: "lets-chat")
+        let animationView = LottieAnimationView(name: title)
         animationView.loopMode = .loop
         animationView.animationSpeed = 1
         animationView.play()
@@ -27,6 +29,6 @@ struct LotteView: UIViewRepresentable {
 
 struct LotteView_Previews: PreviewProvider {
     static var previews: some View {
-        LotteView()
+        LotteView(title: "lets-chat")
     }
 }

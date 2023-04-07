@@ -11,7 +11,7 @@ import SwiftUI
 struct PerceptionChatGPTApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GPTChatView()
         }
     }
 }
